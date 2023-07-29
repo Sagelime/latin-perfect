@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
   </head>
 
   <body onload="myFunction()">
@@ -19,23 +21,40 @@
     </header>
     <main>
       
-      
-      <button class="wrap"><a id="homebutton" href="index.html">Home</a></button>
+      <div class="titlebar">
+        <button><a id="homebutton" href="index.html">BACK</a></button>
 
-      <h1 class="wrap" id="titletext">Latin Perfect | Latin</h1>
-      
+        <h1 id="titletext">Latin Perfect | Latin</h1>
+      </div>
 
       <div class="center">
 
         
         <form">
-          <p for="output1">What is the scientific name for <span id="common"></span></p><br><br>
-          <input type="text" id="output1" name="output1" autofocus><br><br>
-          <p id="result">Wrong. It was <span id="latin"></span></p><br><br><br><br><br><br><br>
-          <input id="continuebutton" type="button" value="Check" onClick="check()">
-        </form>
+          <p id="outputheader" for="output1">What is the scientific name for: </p>
+          <p><span id="common"></span></p>
+          <input type="text" id="output1" name="output1" autofocus>
+      
+        </div>
+          
+        <div id="bottombar" class="bottombar">
+          <table class="solutiondiv">
+            <tr>
+              <td id="incorrectimage"><img id="iimg" src="images/1200px-Flat_cross_icon.svg.png" width="84px" height="84px"></td>
+              <td>
+                <p id="resultheader">Correct solution: <br></p>
+                <p id="result"><span id="latin"></span></p>
+              </td>
+              <td><input id="continuebutton" type="button" value="CHECK" onClick="check()"></td>
+            </tr>
+          </table>
+          
+        </div>
+      </form>
 
-      </div>
+      
+
+      
 
       <script>
 
@@ -74,15 +93,24 @@
         function check() {
           output1 = document.getElementById('output1').value
           if (output1 == latin) {
-            document.body.style.backgroundColor = '#edfff1';
-            document.getElementById('continuebutton').value = 'Continue';
+            // document.body.style.backgroundColor = '#edfff1';
+            document.getElementById('bottombar').style.backgroundColor = '#edfff1';
+            document.getElementById('continuebutton').value = 'CONTINUE';
             document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
+            document.getElementById('bottombar').style.borderTop = "0px";
           }
           else {
-            document.body.style.backgroundColor = '#fcd4d4';
-            document.getElementById("result").style.color = 'rgba(0, 0, 0)';
-            document.getElementById('continuebutton').value = 'Restart';
+            // document.body.style.backgroundColor = '#fcd4d4';
+            document.getElementById("result").style.color = '#b93434';
+            document.getElementById("resultheader").style.color = '#b93434';
+            var div = document.getElementById('iimg');
+            div.style.opacity = "1";
+            document.getElementById('continuebutton').value = 'CONTINUE';
+            document.getElementById('continuebutton').style.color = 'white';
+            document.getElementById('continuebutton').style.backgroundColor = '#b93434';
             document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
+            document.getElementById('bottombar').style.backgroundColor = '#fcd4d4';
+            document.getElementById('bottombar').style.borderTop = "0px";
           }
         }
 
