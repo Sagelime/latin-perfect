@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Multichoice</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Education perfect but bootleg" />
+    <meta name="author" content="Sage Mavka" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+  </head>
+
+  <body onload="myFunction()">
+    <!--This is a comment-->
+    <header>
+      <nav>
+        <!--Make your navigation in here!-->
+      </nav>
+    </header>
+    <main>
+      
+      <!-- <button onclick="history.back()">Go Back</button> -->
+
+      <button class="wrap"><a id="homebutton" href="index.html">Home</a></button>
+
+      <h1 class="wrap" id="titletext">Latin Perfect | Multichoice</h1>
+      
+
+      <div class="center">
+
+        <p>What is the scientific name for <span id="common"></span></p><br>
+          <button onClick="check(value, id)" id="output1" value="1">Euphorbia leucocephala</button>
+          <button onClick="check(value, id)" id="output2" value="2">Pyrostegia venusta</button>
+          <button onClick="check(value, id)" id="output3" value="3">Backhousia citriodora</button>
+          <button onClick="check(value, id)" id="output4" value="4">Casuarina cunninghamiana</button>
+          <button onClick="check(value, id)" id="output5" value="5">Zoysia tenuifolia</button><br>
+          <button onClick="check(value, id)" id="output6" value="6">Thuja orientalis</button>
+          <button onClick="check(value, id)" id="output7" value="7">Argyranthemum frutescens</button>
+          <button onClick="check(value, id)" id="output8" value="8">Westringia fruticosa</button>
+          <button onClick="check(value, id)" id="output9" value="9">Camellia 'Scentuous'</button>
+          <button onClick="check(value, id)" id="output10" value="10">Syzygium luehmannii</button>
+        <p id="result">It was <span id="latin"></span></p>
+
+      </div>
+
+      <!-- <div class="continue">
+        <button id="continuebutton" disabled onclick="location.reload()">Check</button>
+      </div> -->
+
+    </main>
+    <footer>
+      <!--Put your footer in here! -->
+    </footer>
+
+    <script>
+
+      var word1 = "Euphorbia leucocephala";
+      var word2 = "Pyrostegia venusta";
+      var word3 = "Backhousia citriodora";
+      var word4 = "Casuarina cunninghamiana";
+      var word5 = "Zoysia tenuifolia";
+      var word6 = "Thuja orientalis";
+      var word7 = "Argyranthemum frutescens";
+      var word8 = "Westringia fruticosa";
+      var word9 = "Camellia 'Scentuous'";
+      var word10 = "Syzygium luehmannii";
+      var common1 = "Snowflake";
+      var common2 = "Flame vine";
+      var common3 = "Lemon myrtle";
+      var common4 = "River she-oak";
+      var common5 = "No-mow grass";
+      var common6 = "Book-leaf pine";
+      var common7 = "Marguerite daisy";
+      var common8 = "Wild rosemary";
+      var common9 = "Camellia";
+      var common10 = "Lilly pilly";
+
+      let number = Math.floor(Math.random() * 10) + 1;
+      let latin = eval("word" + number);
+      let common = eval("common" + number);
+      
+      
+
+      function myFunction() {
+        document.getElementById("common").innerHTML = common;
+        document.getElementById("latin").innerHTML = latin;
+      }
+
+      
+      function check(value, id) {
+        
+        
+        if (value == number) {
+          document.body.style.backgroundColor = '#edfff1';
+          // document.getElementById(id).style.backgroundColor = '#edfff1';
+          // document.getElementById("continuebutton").disabled = false;
+          document.getElementById("result").style.color = 'rgba(0, 0, 0)';
+          
+          // document.getElementById('continuebutton').innerHTML = 'Continue';
+          // document.getElementById("continuebutton").style.backgroundColor = '#edfff1';
+          setTimeout(() => {  location.reload(); }, 2000);
+          }
+        else {
+          document.body.style.backgroundColor = '#fcd4d4';
+          
+          // document.getElementById(id).style.backgroundColor = '#fcd4d4';
+          document.getElementById("result").style.color = 'rgba(0, 0, 0)';
+          
+          // document.getElementById("continuebutton").disabled = false;
+          
+          // document.getElementById('continuebutton').innerHTML = 'Restart';
+          // document.getElementById("continuebutton").style.backgroundColor = '#fcd4d4';
+          setTimeout(() => {  location.reload(); }, 2000);
+          
+        }
+      }
+    
+  </script>
+
+  </body>
+</html>

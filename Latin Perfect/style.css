@@ -1,0 +1,76 @@
+
+/*Reset CSS*/
+/* {
+  padding: 0px;
+  margin: 0px;
+}
+*/
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 25px;
+}
+
+.center {
+  padding: 250px 0 100px 0;
+  text-align: center;
+}
+
+button {
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.continue {
+  position: relative;
+  text-align: center;
+  padding: 15px;
+}
+
+#continuebutton {
+  padding: 15px 200px;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#result {
+  color: rgba(0, 0, 0, 0);
+}
+
+input[type=text] {
+  width: 500px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+#homebutton {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+
+.wrap {
+  display: inline-block;
+}
+
+#titletext {
+  padding: 0 0 0 550px;
+}
