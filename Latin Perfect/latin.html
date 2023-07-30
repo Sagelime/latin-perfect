@@ -40,7 +40,10 @@
         <div id="bottombar" class="bottombar">
           <table class="solutiondiv">
             <tr>
-              <td id="incorrectimage"><img id="iimg" src="images/1200px-Flat_cross_icon.svg.png" width="84px" height="84px"></td>
+              <td id="resultimage">
+                <img id="iimg" src="images/cross.png" width="84px" height="84px">
+                <img id="cimg" src="images/tick.png" width="84px" height="84px">
+              </td>
               <td>
                 <p id="resultheader">Correct solution: <br></p>
                 <p id="result"><span id="latin"></span></p>
@@ -93,14 +96,18 @@
         function check() {
           output1 = document.getElementById('output1').value
           if (output1 == latin) {
-            // document.body.style.backgroundColor = '#edfff1';
+            document.getElementById("result").style.color = '#418850';
+            document.getElementById("resultheader").style.color = '#418850';
             document.getElementById('bottombar').style.backgroundColor = '#edfff1';
+            var div = document.getElementById('cimg');
+            div.style.opacity = "1";
+            document.getElementById('continuebutton').style.color = 'white';
+            document.getElementById('continuebutton').style.backgroundColor = '#418850';
             document.getElementById('continuebutton').value = 'CONTINUE';
             document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
             document.getElementById('bottombar').style.borderTop = "0px";
           }
           else {
-            // document.body.style.backgroundColor = '#fcd4d4';
             document.getElementById("result").style.color = '#b93434';
             document.getElementById("resultheader").style.color = '#b93434';
             var div = document.getElementById('iimg');

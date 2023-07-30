@@ -30,21 +30,10 @@ p {
 }
 
 .titlebar button {
-  padding: 15px;
-  border: none;
-  text-align: center;
-  text-decoration: none;
-  
-  font-weight: 600;
-
-  font-size: 16px;
-  margin: 7px 0px 0px 7px;
-  cursor: pointer;
   width: 100px;
-  border-radius:1em;
 }
 
-.titlebar a {
+a {
   text-decoration: none;
   color: rgb(121, 121, 121);
   font-family: 'Montserrat', sans-serif;
@@ -59,15 +48,19 @@ p {
 }
 
 button {
+  padding: 15px;
   border: none;
-  color: black;
-  padding: 15px 32px;
+  color: rgb(121, 121, 121);
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  width: 150px;
+  border-radius:1em;
   
 }
 
@@ -139,14 +132,26 @@ input[type=text] {
   margin: auto;
 }
 
-#incorrectimage {
+#resultimage {
   width: 110px;
+  position: relative;
 }
 
-#incorrectimage img {
+#iimg {
   opacity: 0%;
+  top: 0;
+  left: 0;
+  position: relative;
+}
+
+#cimg {
+  opacity: 0%;
+  top: 20px;
+  left: 20px;
+  position: absolute;
 }
 
 #outputheader {
   font-weight: 600;
 }
+
