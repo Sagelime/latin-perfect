@@ -40,6 +40,13 @@ p {
   transform: translate(-50%, -50%);
 }
 
+#indextext {
+  position: absolute;
+  top: 17px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .titlebar button {
   width: 100px;
 }
