@@ -1,10 +1,10 @@
 
-/*Reset CSS*/
-/* {
+Reset CSS
+{
   padding: 0px;
   margin: 0px;
 }
-*/
+
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -16,6 +16,17 @@ h1 {
 
 p {
   font-size: 25px;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.copyright p {
+  font-size: 16px;
 }
 
 .titlebar {
@@ -45,6 +56,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -65%);
+  width: 100%;
 }
 
 button {
@@ -64,46 +76,11 @@ button {
   
 }
 
-.continue {
-  position: relative;
-  text-align: center;
-  padding: 15px;
-}
-
-#continuebutton {
-  padding: 15px;
-  border: none;
-  color: rgb(121, 121, 121);
-  text-align: center;
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 150px;
-  border-radius:1em;
-}
-
-#result {
-  color: rgba(0, 0, 0, 0);
-
-  width: 350px;
-  text-align: left;
-  font-size: 18px;
-  margin: 10px 0px;
-}
-
-#resultheader {
-  color: rgba(0, 0, 0, 0);
-  width: 350px;
-  text-align: left;
-  margin: 10px 0px;
+#outputheader {
   font-weight: 600;
 }
 
-input[type=text] {
+#output1 {
   width: 500px;
   padding: 12px 20px;
   margin: 8px 0;
@@ -124,34 +101,145 @@ input[type=text] {
   height: 140px;
 }
 
-.solutiondiv {
-  text-align: center;
-  margin-top: 40px;
-  width: 1000px;
-  height: 100%;
+.grid-container {
+  display: grid;
+  grid-template-columns: max-content auto auto;
+  grid-gap: 2px;
+  width: 975px;
   margin: auto;
+  height: 100%;
+  position: relative;
+}
+
+.item1 * {
+  position: relative;
+  top: 20%;
 }
 
 #resultimage {
-  width: 110px;
-  position: relative;
-}
-
-#iimg {
   opacity: 0%;
-  top: 0;
-  left: 0;
+}
+
+.item2 {
+  padding-left: 15px;
+}
+
+.item2 * {
   position: relative;
+  top: 20%;
 }
 
-#cimg {
-  opacity: 0%;
-  top: 20px;
-  left: 20px;
-  position: absolute;
-}
-
-#outputheader {
+#resultheader {
+  color: rgba(0, 0, 0, 0);
+  width: 350px;
+  text-align: left;
+  margin: 10px 0px;
   font-weight: 600;
 }
 
+#result {
+  color: rgba(0, 0, 0, 0);
+  width: 350px;
+  text-align: left;
+  font-size: 18px;
+  margin: 10px 0px;
+}
+
+.item3 {
+  text-align: right;
+  margin: 0 25px;
+}
+
+#continuebutton {
+  padding: 15px;
+  border: none;
+  color: rgb(121, 121, 121);
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 150px;
+  border-radius: 1em;
+
+  position: relative;
+  top: 50%;
+  transform: translate(0%, -60%);
+}
+
+@media screen and (max-width: 1000px) {
+  .item3 {
+    grid-area: 2 / 1 / span 1 / span 2;
+  }
+
+  .grid-container {
+    width: 100%;
+    grid-template-columns: auto;
+  }
+
+  #continuebutton {
+    width: 100%;
+  }
+
+  #resultheader {
+    font-size: 22px;
+  }
+
+  #result {
+    font-size: 16px;
+  }
+
+  .item3 {
+    margin: 0 25px 15px 25px;
+  }
+
+  .item2 {
+    padding-left: 30px;
+  }
+
+  .item2 * {
+    top: 10%;
+  }
+
+  .item1 {
+    display: none;
+  }
+
+  .bottombar {
+    height: 170px;
+  }
+
+  .titlebar h1 {
+    top: 5px;
+    right: 0;
+    transform: none;
+    margin: 0;
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .center {
+    /* min-width: 20%; */
+    width: 80%;
+  }
+
+  #output1 {
+    width: 100%;
+  }
+
+}
+
+/* input[type=text] {
+  width: 500px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  background-color: #f7f7f7;
+  border: 2px solid #e6e6e6;
+  border-radius:1em;
+} */
