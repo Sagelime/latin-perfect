@@ -100,9 +100,11 @@
             document.getElementById('resultimage').src = 'images/tick.png';
             var div = document.getElementById('resultimage');
             div.style.opacity = "1";
+            document.querySelector('input[name="output1"]').disabled = true;
             document.getElementById('continuebutton').style.color = 'white';
             document.getElementById('continuebutton').style.backgroundColor = '#418850';
             document.getElementById('continuebutton').value = 'CONTINUE';
+            document.getElementById('continuebutton').focus();
             document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
             document.getElementById('bottombar').style.borderTop = "0px";
           }
@@ -112,9 +114,11 @@
             document.getElementById('resultimage').src = 'images/cross.png';
             var div = document.getElementById('resultimage');
             div.style.opacity = "1";
+            document.querySelector('input[name="output1"]').disabled = true;
             document.getElementById('continuebutton').value = 'CONTINUE';
             document.getElementById('continuebutton').style.color = 'white';
             document.getElementById('continuebutton').style.backgroundColor = '#b93434';
+            document.getElementById('continuebutton').focus();
             document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
             document.getElementById('bottombar').style.backgroundColor = '#fcd4d4';
             document.getElementById('bottombar').style.borderTop = "0px";
