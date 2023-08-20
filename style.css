@@ -47,9 +47,9 @@ p {
 
 #indextext {
   position: absolute;
-  top: 17px;
+  /* top: 30px; */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
 }
 
 .titlebar button {
@@ -88,13 +88,21 @@ button {
   
 }
 
-.weeditem1 { grid-area: header; }
-.weeditem2 { grid-area: image; }
-.weeditem3 { grid-area: inputs; }
+.weeditem1 { 
+  grid-area: header; 
+}
+.weeditem2 { 
+  grid-area: image;
+}
+.weeditem3 { 
+  grid-area: inputs;
+}
+
 
 #weedimage {
   position: relative;
   width: 400px;
+  height: 266px;
   top: 50%;
   transform: translate(0, -50%);
 }
@@ -137,6 +145,7 @@ input[type="text"] {
   margin: 0;
   text-align: left;
   left: 45px;
+  width: 80%;
   position: relative;
 }
 
@@ -289,31 +298,55 @@ input[type="text"] {
       'inputs';
     top: 50%;
     left: 50%;
-    width: 100vw;
-    transform: translate(-50%, -48%);
+    width: 100%;
+    transform: translate(-50%, -54%);
   }
   
 
   #weedimage {
     width: 250px;
+    height: 166px;
+  }
+
+  .weedbottom {
+    height: 100px;
+  }
+
+  .weedoutputheader {
+    margin: 0;
   }
 }
 
 @media screen and (max-width: 600px) {
   .center {
     /* min-width: 20%; */
-    width: 80%;
+    width: 90%;
   }
 
   #output1 {
     width: 100%;
   }
 
-  /* .weeditem3 input {
-    width: 90%;
-  } */
+  .weeditem3 input {
+    width: 100%;
+    padding: 0 6px;
+  }
+
+  .weeditem1 {
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, 0);
+  }
+
   .weeditem3 {
     width: 90%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, 0);
+  }
+
+  .answer {
+    left: 22px;
   }
 
 }
