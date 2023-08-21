@@ -44,11 +44,14 @@
               
               <input type="text" id="output3" name="output3" placeholder="Dispersal"><br>
               <p class="answer"><span id="dispersal"></span></p>
+
+              <input type="text" id="output4" name="output4" placeholder="Reproduce"><br>
+              <p class="answer"><span id="reproduce"></span></p>
               
-              <input type="text" id="output4" name="output4" placeholder="Manual control"><br>
+              <input type="text" id="output5" name="output5" placeholder="Manual control"><br>
               <p class="answer"><span id="mControls"></span></p>
               
-              <input type="text" id="output5" name="output5" placeholder="Chemical control">
+              <input type="text" id="output6" name="output6" placeholder="Chemical control">
               <p class="answer"><span id="cControls"></span></p>
             </div>
           </div>
@@ -74,17 +77,73 @@
         var dispersal1 = "Seed: wildlife, cultivation";
         var reproduce1 = "N/A";
         var mControls1 = "Tillage, cover crops, planting density, farm hygiene";
-        var cControls1 = "Selective and non-selective eg. metham";
+        var cControls1 = "Selective eg. Starane";
 
         var weed2 = "Blue billygoat weed";
         var lifeCycle2 = "Herbaceous annual or biennial";
         var dispersal2 = "Seed: wind, water, attach to passersby";
         var reproduce2 = "N/A";
         var mControls2 = "Tilling, hand weeding";
-        var cControls2 = "Selective eg. spray with metsulfuron-methyl at 1g/10L with surfactant";
+        var cControls2 = "Selective eg. metsulfuron-methyl";
+
+        var weed3 = "Broad-leafed pepper tree";
+        var lifeCycle3 = "Woody perennial";
+        var dispersal3 = "Seed: brids";
+        var reproduce3 = "Vegetative: suckers at cut stumps";
+        var mControls3 = "Cut down, stump removal";
+        var cControls3 = "Non-selective eg. Roundup";
+
+        var weed4 = "Chinese elm ";
+        var lifeCycle4 = "Woody deciduous perennial";
+        var dispersal4 = "Seed: animals, water, garden waste";
+        var reproduce4 = "Vegetative: suckers";
+        var mControls4 = "Uproot saplings, cut and leave (starve), cut and treet (eliminate)";
+        var cControls4 = "Non-selective eg. Weedmaster Duo";
+
+        var weed5 = "Cobbler's pegs";
+        var lifeCycle5 = "Herbaceous annual";
+        var dispersal5 = "Seed: Attchment, vehicles, water, produce";
+        var reproduce5 = "N/A";
+        var mControls5 = "Hand pulling and mulching";
+        var cControls5 = "Selective: Diuron, glyphosate, bentazone, etc.";
+
+        var weed6 = "Creeping cinderella weed";
+        var lifeCycle6 = "Herbaceous annual or perennial";
+        var dispersal6 = "Seed: attaches to clothing, animals, etc.";
+        var reproduce6 = "Vegetative: soil, garden waste, water";
+        var mControls6 = "Hand pulling before flower/seed, treat vehicles and equipment";
+        var cControls6 = "Selective eg. MCPA + terbutryn";
+
+        var weed7 = "Creeping oxalis";
+        var lifeCycle7 = "Herbaceous perennial";
+        var dispersal7 = "Seed: explosive";
+        var reproduce7 = "Vegetative: underground bulbs";
+        var mControls7 = "Hand pulling, mulching, improve soil health";
+        var cControls7 = "Selective eg. Broadforce";
+
+        var weed8 = "Emilia";
+        var lifeCycle8 = "Herbaceous annual";
+        var dispersal8 = "Seed: wind, machinery, water, animals";
+        var reproduce8 = "N/A";
+        var mControls8 = "Tilling, hand weeding, keeping area mowed";
+        var cControls8 = "Non-selective eg. finale, reward, scythe";
+
+        var weed9 = "Flickweed";
+        var lifeCycle9 = "Herbaceous annual";
+        var dispersal9 = "Seed: explosion";
+        var reproduce9 = "N/A";
+        var mControls9 = "Hand weeding and mulching, moving in early spring";
+        var cControls9 = "Non-selective eg. roundup";
+
+        var weed10 = "Glycine";
+        var lifeCycle10 = "Woody perennial";
+        var dispersal10 = "Seed: contaminated fodder, garden waste";
+        var reproduce10 = "Vegetative: Detached woody stems take root";
+        var mControls10 = "Brush cutter";
+        var cControls10 = "Non-selective eg. Conqueror";
         
 
-        let number = Math.floor(Math.random() * 2) + 1;
+        let number = Math.floor(Math.random() * 10) + 1;
         let weed = eval("weed" + number);
         let lifeCycle = eval("lifeCycle" + number);
         let dispersal = eval("dispersal" + number);
@@ -98,6 +157,7 @@
           document.getElementById("weed").innerHTML = weed;
           document.getElementById("lifeCycle").innerHTML = lifeCycle;
           document.getElementById("dispersal").innerHTML = dispersal;
+          document.getElementById("reproduce").innerHTML = reproduce;
           document.getElementById("mControls").innerHTML = mControls;
           document.getElementById("cControls").innerHTML = cControls;
           document.getElementById('weedimage').src = questionimage;
@@ -107,6 +167,7 @@
             div[2].style.display = "none";
             div[3].style.display = "none";
             div[4].style.display = "none";
+            div[5].style.display = "none";
 
         }
 
@@ -118,6 +179,7 @@
           document.querySelector('input[name="output3"]').disabled = true;
           document.querySelector('input[name="output4"]').disabled = true;
           document.querySelector('input[name="output5"]').disabled = true;
+          document.querySelector('input[name="output6"]').disabled = true;
           document.getElementById('continuebutton').value = 'CONTINUE';
           document.getElementById('continuebutton').style.color = 'white';
           document.getElementById('continuebutton').style.backgroundColor = '#85a1e4';
@@ -132,6 +194,7 @@
           div[2].style.display = "block";
           div[3].style.display = "block";
           div[4].style.display = "block";
+          div[5].style.display = "block";
         }
         
       </script>
