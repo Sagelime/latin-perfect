@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Sagie's weeds</title>
+    <title>Weed Leaves</title>
     <meta charset="utf-8" />
     <meta name="description" content="Education perfect but bootleg" />
     <meta name="author" content="Sage Mavka" />
@@ -24,7 +24,7 @@
       <div class="titlebar">
         <button><a id="homebutton" href="index.html">BACK</a></button>
 
-        <h1 id="titletext">Sagie's weeds</h1>
+        <h1 id="titletext">Weed Leaves</h1>
       </div>
 
       <div class="center">
@@ -37,15 +37,15 @@
             
             <div class="weeditem3">
               <input type="text" id="output1" name="output1" placeholder="Weed ID" autofocus><br>
-              <p class="answer"><span id="weed"></span></p>
+              <p class="answer"><span id="weed"></span><span id="description"></span></p>
               
               <input type="text" id="output2" name="output2" placeholder="Lifecycle"><br>
               <p class="answer"><span id="lifeCycle"></span></p>
               
-              <input type="text" id="output3" name="output3" placeholder="Dispersal"><br>
+              <input type="text" id="output3" name="output3" placeholder="Method of dispersal"><br>
               <p class="answer"><span id="dispersal"></span></p>
 
-              <input type="text" id="output4" name="output4" placeholder="Reproduce"><br>
+              <input type="text" id="output4" name="output4" placeholder="Reproduction types"><br>
               <p class="answer"><span id="reproduce"></span></p>
               
               <input type="text" id="output5" name="output5" placeholder="Manual control"><br>
@@ -69,124 +69,178 @@
 
       <script>
 
-        var prefix = "images/"
-        var suffix = ".jpg"
+        var prefix = "images/leaves/"
+        var suffix = " leaf.jpg"
 
         var weed1 = "Blackberry nightshade";
         var lifeCycle1 = "Herbaceous annual or perennial";
-        var dispersal1 = "Seed: wildlife, cultivation";
-        var reproduce1 = "N/A";
+        var dispersal1 = "wildlife, cultivation";
+        var reproduce1 = "Seed";
         var mControls1 = "Tillage, cover crops, planting density, farm hygiene";
-        var cControls1 = "Foliar spray";
+        var cControls1 = "systemic herbicide";
+        var description1 = " | rough stem";
 
         var weed2 = "Blue billygoat weed";
         var lifeCycle2 = "Herbaceous annual or biennial";
-        var dispersal2 = "Seed: wind, water, attach to passersby";
-        var reproduce2 = "N/A";
+        var dispersal2 = "wind, water, attach to passersby";
+        var reproduce2 = "Seed";
         var mControls2 = "Tilling, hand weeding";
-        var cControls2 = "Foliar spray";
+        var cControls2 = "systemic herbicide";
+        var description2 = " | hairy stems and leaves";
 
         var weed3 = "Broad-leafed pepper tree";
         var lifeCycle3 = "Woody perennial";
-        var dispersal3 = "Seed: brids";
-        var reproduce3 = "Vegetative: suckers at cut stumps";
+        var dispersal3 = "brids";
+        var reproduce3 = "seeds, suckers at cut stumps";
         var mControls3 = "Cut down, stump removal";
         var cControls3 = "Stem injection";
+        var description3 = "";
 
-        var weed4 = "Chinese elm";
-        var lifeCycle4 = "Woody deciduous perennial";
-        var dispersal4 = "Seed: animals, water, garden waste";
-        var reproduce4 = "Vegetative: suckers";
+        var weed4 = "Chinese celtis";
+        var lifeCycle4 = "Woody perennial";
+        var dispersal4 = "animals, water, garden waste";
+        var reproduce4 = "seeds, suckers";
         var mControls4 = "Uproot saplings, cut and leave (starve), cut and treet (eliminate)";
         var cControls4 = "Cut-treat";
+        var description4 = "";
 
         var weed5 = "Cobbler's pegs";
         var lifeCycle5 = "Herbaceous annual";
-        var dispersal5 = "Seed: Attchment, vehicles, water, produce";
-        var reproduce5 = "N/A";
+        var dispersal5 = "Attchment, vehicles, water, produce";
+        var reproduce5 = "seed";
         var mControls5 = "Hand pulling and mulching";
-        var cControls5 = "Foliar spray";
+        var cControls5 = "systemic herbicide";
+        var description5 = "";
 
         var weed6 = "Creeping cinderella weed";
         var lifeCycle6 = "Herbaceous annual or perennial";
-        var dispersal6 = "Seed: attaches to clothing, animals, etc.";
-        var reproduce6 = "Vegetative: soil, garden waste, water";
+        var dispersal6 = "attaches to clothing, animals";
+        var reproduce6 = "seeds, soil, garden waste, water";
         var mControls6 = "Hand pulling before flower/seed, treat vehicles and equipment";
-        var cControls6 = "Foliar spray";
+        var cControls6 = "systemic herbicide";
+        var description6 = " | warty textured leaf";
 
         var weed7 = "Creeping oxalis";
         var lifeCycle7 = "Herbaceous perennial";
-        var dispersal7 = "Seed: explosive";
-        var reproduce7 = "Vegetative: underground bulbs";
+        var dispersal7 = "explosive";
+        var reproduce7 = "seeds, underground bulbs";
         var mControls7 = "Hand pulling, mulching, improve soil health";
-        var cControls7 = "Foliar spray";
+        var cControls7 = "systemic herbicide";
+        var description7 = "";
 
         var weed8 = "Emilia";
         var lifeCycle8 = "Herbaceous annual";
-        var dispersal8 = "Seed: wind, machinery, water, animals";
-        var reproduce8 = "N/A";
+        var dispersal8 = "wind, machinery, water, animals";
+        var reproduce8 = "seeds";
         var mControls8 = "Tilling, hand weeding, keeping area mowed";
-        var cControls8 = "Foliar spray";
+        var cControls8 = "systemic herbicide";
+        var description8 = "";
 
         var weed9 = "Flickweed";
         var lifeCycle9 = "Herbaceous annual";
-        var dispersal9 = "Seed: explosion";
-        var reproduce9 = "N/A";
+        var dispersal9 = "explosion";
+        var reproduce9 = "seeds";
         var mControls9 = "Hand weeding and mulching, mowing in early spring";
-        var cControls9 = "Foliar spray";
+        var cControls9 = "systemic herbicide";
+        var description9 = "";
 
         var weed10 = "Glycine";
         var lifeCycle10 = "Woody perennial";
-        var dispersal10 = "Seed: contaminated fodder, garden waste";
-        var reproduce10 = "Vegetative: Detached woody stems take root";
+        var dispersal10 = "contaminated fodder, garden waste";
+        var reproduce10 = "seeds, detached woody stems take root";
         var mControls10 = "Brush cutter";
         var cControls10 = "Splatter gun";
+        var description10 = "";
 
         var weed11 = "Ground Asparagus";
         var lifeCycle11 = "Woody perennial";
-        var dispersal11 = "Seed: Birds";
-        var reproduce11 = "Vegetative: From the crown, garden waste";
+        var dispersal11 = "Birds";
+        var reproduce11 = "seeds, From the crown, garden waste";
         var mControls11 = "Crowning";
         var cControls11 = "Cut stump";
+        var description11 = " | fine leaves";
 
         var weed12 = "Lantana";
         var lifeCycle12 = "Woody perennial";
-        var dispersal12 = "Seed: Birds and animals";
-        var reproduce12 = "Vegetative: Suckers or from crown";
+        var dispersal12 = "Birds and animals";
+        var reproduce12 = "seeds, suckers or from crown";
         var mControls12 = "Complete removal";
         var cControls12 = "Cut stump";
+        var description12 = " | rough leaves";
 
-        var weed13 = "Mother of millions";
+        var weed13 = "Madeira vine";
         var lifeCycle13 = "Woody perennial";
-        var dispersal13 = "Seed: Seed drop off";
-        var reproduce13 = "Vegetative: Grows from plantlets";
-        var mControls13 = "Fire";
-        var cControls13 = "Foliar spray";
+        var dispersal13 = "Birds and animals, movement of soil";
+        var reproduce13 = "seeds, Grow from tubers";
+        var mControls13 = "Complete removal";
+        var cControls13 = "Splatter gun";
+        var description13 = " | thick, fleshy leaves";
 
-        var weed14 = "Nut grass";
-        var lifeCycle14 = "Herbaceous perennial";
-        var dispersal14 = "N/A";
-        var reproduce14 = "Vegetative: Creeping underground stems";
-        var mControls14 = "Hand pulling";
-        var cControls14 = "Foliar spray";
+        var weed14 = "Mother of millions";
+        var lifeCycle14 = "Woody perennial";
+        var dispersal14 = "drop off";
+        var reproduce14 = "seeds, Grows from plantlets";
+        var mControls14 = "Fire";
+        var cControls14 = "systemic herbicide";
+        var description14 = " | smooth, fleshy, succulent leaves";
 
-        var weed15 = "Queensland umbrella tree";
-        var lifeCycle15 = "Woody perennial";
-        var dispersal15 = "Seed: Birds and animals";
-        var reproduce15 = "N/A";
-        var mControls15 = "Stump removal";
-        var cControls15 = "Stem injection";
+        var weed15 = "Nut grass";
+        var lifeCycle15 = "Herbaceous perennial";
+        var dispersal15 = "N/A";
+        var reproduce15 = "Creeping underground stems";
+        var mControls15 = "Hand pulling";
+        var cControls15 = "selective systemic herbicide";
+        var description15 = "";
 
-  
+        var weed16 = "Ochna";
+        var lifeCycle16 = "Woody perennial";
+        var dispersal16 = "Birds and animals, garden waste";
+        var reproduce16 = "seeds";
+        var mControls16 = "Remove roots carefully";
+        var cControls16 = "Basal bark treatment";
+        var description16 = " | pimple-textured bark";
+
+        var weed17 = "Queensland umbrella tree";
+        var lifeCycle17 = "Woody perennial";
+        var dispersal17 = "Birds and animals";
+        var reproduce17 = "seeds";
+        var mControls17 = "Stump removal";
+        var cControls17 = "Stem injection";
+        var description17 = "";
+
+        var weed18 = "Singapore daisy";
+        var lifeCycle18 = "Herbaceous perennial";
+        var dispersal18 = "N/A";
+        var reproduce18 = "Stem fragments, mowing";
+        var mControls18 = "N/A";
+        var cControls18 = "systemic herbicide";
+        var description18 = " | glossy leaves";
+
+        var weed19 = "Spotted spurge";
+        var lifeCycle19 = "Herbaceous annual";
+        var dispersal19 = "Wind, water, soil";
+        var reproduce19 = "seeds";
+        var mControls19 = "Complete removal";
+        var cControls19 = "systemic herbicide";
+        var description19 = " | spotted leaves";
+
+        var weed20 = "Thickhead";
+        var lifeCycle20 = "Herbaceous annual";
+        var dispersal20 = "Wind, animals";
+        var reproduce20 = "seeds";
+        var mControls20 = "Complete removal";
+        var cControls20 = "systemic herbicide";
+        var description20 = "";
         
 
-        let number = Math.floor(Math.random() * 15) + 1;
+        let number = Math.floor(Math.random() * 20) + 1;
         let weed = eval("weed" + number);
         let lifeCycle = eval("lifeCycle" + number);
         let dispersal = eval("dispersal" + number);
         let reproduce = eval("reproduce" + number);
         let mControls = eval("mControls" + number);
         let cControls = eval("cControls" + number);
+        let description = eval("description" + number);
         let questionimage = prefix + weed + suffix;
           
 
@@ -197,6 +251,7 @@
           document.getElementById("reproduce").innerHTML = reproduce;
           document.getElementById("mControls").innerHTML = mControls;
           document.getElementById("cControls").innerHTML = cControls;
+          document.getElementById("description").innerHTML = description;
           document.getElementById('weedimage').src = questionimage;
           var div = document.getElementsByClassName('answer');
             div[0].style.display = "none";
@@ -224,6 +279,7 @@
           document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
           document.getElementById('bottombar').style.backgroundColor = '#c2d1f4';
           document.getElementById('bottombar').style.borderTop = "0px";
+          
         
 
           var div = document.getElementsByClassName('answer');
