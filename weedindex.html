@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Weed Leaves</title>
+    <title>Weed Index</title>
     <meta charset="utf-8" />
     <meta name="description" content="Education perfect but bootleg" />
     <meta name="author" content="Sage Mavka" />
@@ -24,53 +24,84 @@
       <div class="titlebar">
         <button><a id="homebutton" href="index.html">BACK</a></button>
 
-        <h1 id="titletext">Weed Leaves</h1>
+        <h1 id="titletext">Weed Index</h1>
       </div>
 
       <div class="center">
         
-        <form">
-          <div class="weedgrid-container">
-            <div class="weeditem1"><p class="weedoutputheader" id="outputheader" for="output1">List the characteristics of this weed: </p></div>
+        <div class="weedgrid-container weedindex">
+          <div class="weeditem1">
+            <form">
+              <label for="weedoption">Characteristics of: </label>
+              <select id="weedoption" name="weedoption" onchange="getOption()">
+                <option value="1">Blackberry nightshade</option>
+                <option value="2">Blue billygoat weed</option>
+                <option value="3">Broad-leafed pepper tree</option>
+                <option value="4">Chinese celtis</option>
+                <option value="5">Cobbler's pegs</option>
+                <option value="6">Creeping cinderella weed</option>
+                <option value="7">Creeping oxalis</option>
+                <option value="8">Emilia</option>
+                <option value="9">Flickweed</option>
+                <option value="10">Glycine</option>
+                <option value="11">Ground asparagus</option>
+                <option value="12">Lantana</option>
+                <option value="13">Madeira vine</option>
+                <option value="14">Mother of millions</option>
+                <option value="15">Nut grass</option>
+                <option value="16">Ochna</option>
+                <option value="17">Queensland umbrella tree</option>
+                <option value="18">Singapore daisy</option>
+                <option value="19">Spotted spurge</option>
+                <option value="20">Thickhead</option>
+              </select>
+              <!-- <input type="button" onclick="getOption()" value="Search"> -->
+            </form>
             
-            <div class="weeditem2"><img id="weedimage" src=""></div>
-            
-            <div class="weeditem3">
-              <input type="text" id="output1" name="output1" placeholder="Weed ID" autofocus><br>
-              <p class="answer"><span id="weed"></span><span id="description"></span></p>
-              
-              <input type="text" id="output2" name="output2" placeholder="Lifecycle"><br>
-              <p class="answer"><span id="lifeCycle"></span></p>
-              
-              <input type="text" id="output3" name="output3" placeholder="Method of dispersal"><br>
-              <p class="answer"><span id="dispersal"></span></p>
-
-              <input type="text" id="output4" name="output4" placeholder="Reproduction types"><br>
-              <p class="answer"><span id="reproduce"></span></p>
-              
-              <input type="text" id="output5" name="output5" placeholder="Manual control"><br>
-              <p class="answer"><span id="mControls"></span></p>
-              
-              <input type="text" id="output6" name="output6" placeholder="Chemical control">
-              <p class="answer"><span id="cControls"></span></p>
-            </div>
-          </div>
-          </div>
-
-          <div id="bottombar" class="bottombar weedbottom">
-            <div class="grid-container" id="weedgrid">
-              <div class="weedcontinue"><input id="continuebutton" type="button" value="CHECK" onClick="check()"></div>  
-            </div>
           </div>
           
-        </form>
+          <div class="weeditem2">
+            <img id="weedimage" src="">
+            <img id="weedleafimage" src="">
+          </div>
+          
+          <div class="weeditem3 weedindex3">
+            <input type="text" id="output1" name="output1" placeholder="Weed ID" autofocus><br>
+            <p class="answer"><span id="weed"></span><span id="description"></span></p>
+            
+            <input type="text" id="output2" name="output2" placeholder="Lifecycle"><br>
+            <p class="answer"><span id="lifeCycle"></span></p>
+            
+            <input type="text" id="output3" name="output3" placeholder="Method of dispersal"><br>
+            <p class="answer"><span id="dispersal"></span></p>
+
+            <input type="text" id="output4" name="output4" placeholder="Reproduction types"><br>
+            <p class="answer"><span id="reproduce"></span></p>
+            
+            <input type="text" id="output5" name="output5" placeholder="Manual control"><br>
+            <p class="answer"><span id="mControls"></span></p>
+            
+            <input type="text" id="output6" name="output6" placeholder="Chemical control">
+            <p class="answer"><span id="cControls"></span></p>
+          </div>
+        </div>
+      </div>
+        
+
+        
+          
+        
       </div> 
     
 
       <script>
 
-        var prefix = "images/leaves/"
-        var suffix = " leaf.jpg"
+        
+
+        var prefix = "images/plants/"
+        var suffix = ".jpg"
+        var leafprefix = "images/leaves/"
+        var leafsuffix = " leaf.jpg"
 
         var weed1 = "Blackberry nightshade";
         var lifeCycle1 = "Herbaceous annual or perennial";
@@ -233,7 +264,7 @@
         var description20 = "";
         
 
-        let number = Math.floor(Math.random() * 20) + 1;
+        let number = 1
         let weed = eval("weed" + number);
         let lifeCycle = eval("lifeCycle" + number);
         let dispersal = eval("dispersal" + number);
@@ -242,7 +273,33 @@
         let cControls = eval("cControls" + number);
         let description = eval("description" + number);
         let questionimage = prefix + weed + suffix;
+        let leafimage = leafprefix + weed + leafsuffix;
           
+        
+        function getOption() {
+          
+          var obj = document.getElementById("weedoption");
+          let number = obj.options[obj.selectedIndex].value;
+          let weed = eval("weed" + number);
+          let lifeCycle = eval("lifeCycle" + number);
+          let dispersal = eval("dispersal" + number);
+          let reproduce = eval("reproduce" + number);
+          let mControls = eval("mControls" + number);
+          let cControls = eval("cControls" + number);
+          let description = eval("description" + number);
+          let questionimage = prefix + weed + suffix;
+          let leafimage = leafprefix + weed + leafsuffix;
+          document.getElementById("weed").innerHTML = weed;
+          document.getElementById("lifeCycle").innerHTML = lifeCycle;
+          document.getElementById("dispersal").innerHTML = dispersal;
+          document.getElementById("reproduce").innerHTML = reproduce;
+          document.getElementById("mControls").innerHTML = mControls;
+          document.getElementById("cControls").innerHTML = cControls;
+          document.getElementById("description").innerHTML = description;
+          document.getElementById('weedimage').src = questionimage;
+          document.getElementById('weedleafimage').src = leafimage;
+          
+        }
 
         function myFunction() {
           document.getElementById("weed").innerHTML = weed;
@@ -253,43 +310,12 @@
           document.getElementById("cControls").innerHTML = cControls;
           document.getElementById("description").innerHTML = description;
           document.getElementById('weedimage').src = questionimage;
-          var div = document.getElementsByClassName('answer');
-            div[0].style.display = "none";
-            div[1].style.display = "none";
-            div[2].style.display = "none";
-            div[3].style.display = "none";
-            div[4].style.display = "none";
-            div[5].style.display = "none";
-
+          document.getElementById('weedleafimage').src = leafimage;
+        
         }
 
         
-        function check() {
-          output1 = document.getElementById('output1').value;
-          document.querySelector('input[name="output1"]').disabled = true;
-          document.querySelector('input[name="output2"]').disabled = true;
-          document.querySelector('input[name="output3"]').disabled = true;
-          document.querySelector('input[name="output4"]').disabled = true;
-          document.querySelector('input[name="output5"]').disabled = true;
-          document.querySelector('input[name="output6"]').disabled = true;
-          document.getElementById('continuebutton').value = 'CONTINUE';
-          document.getElementById('continuebutton').style.color = 'white';
-          document.getElementById('continuebutton').style.backgroundColor = '#85a1e4';
-          document.getElementById('continuebutton').focus();
-          document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
-          document.getElementById('bottombar').style.backgroundColor = '#c2d1f4';
-          document.getElementById('bottombar').style.borderTop = "0px";
-          
         
-
-          var div = document.getElementsByClassName('answer');
-          div[0].style.display = "block";
-          div[1].style.display = "block";
-          div[2].style.display = "block";
-          div[3].style.display = "block";
-          div[4].style.display = "block";
-          div[5].style.display = "block";
-        }
         
       </script>
 
