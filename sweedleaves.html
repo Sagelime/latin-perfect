@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SWeed Leaves</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Education perfect but bootleg" />
+    <meta name="author" content="Sage Mavka" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="images/icon.webp">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body onload="myFunction()">
+    <!--This is a comment-->
+    <header>
+      <nav>
+        <!--Make your navigation in here!-->
+      </nav>
+    </header>
+    <main>
+      
+      <div class="titlebar">
+        <button><a id="homebutton" href="index.html">BACK</a></button>
+
+        <h1 id="titletext">SWeed Leaves</h1>
+      </div>
+
+      <div class="center">
+        
+        <form" autocomplete="off">
+          <div class="weedgrid-container">
+            <div class="weeditem1"><p class="weedoutputheader" id="outputheader" for="output1">List the characteristics of this weed: </p></div>
+            
+            <div class="weeditem2"><img id="weedimage" src=""></div>
+            
+            <div class="weeditem3">
+              <input type="text" id="output1" name="output1" placeholder="Weed ID" autofocus autocomplete="off"><br>
+              <p class="answer"><span id="weed"></span><span id="description"></span></p>
+              
+              <input type="text" id="output2" name="output2" placeholder="Lifecycle" autocomplete="off"><br>
+              <p class="answer"><span id="lifeCycle"></span></p>
+              
+              <input type="text" id="output3" name="output3" placeholder="Method of dispersal" autocomplete="off"><br>
+              <p class="answer"><span id="dispersal"></span></p>
+
+              <input type="text" id="output4" name="output4" placeholder="Reproduction types" autocomplete="off"><br>
+              <p class="answer"><span id="reproduce"></span></p>
+              
+              <input type="text" id="output5" name="output5" placeholder="Manual control" autocomplete="off"><br>
+              <p class="answer"><span id="mControls"></span></p>
+              
+              <input type="text" id="output6" name="output6" placeholder="Chemical control" autocomplete="off">
+              <p class="answer"><span id="cControls"></span></p>
+            </div>
+          </div>
+          </div>
+
+          <div id="bottombar" class="bottombar weedbottom">
+            <div class="grid-container" id="weedgrid">
+              <div class="weedcontinue"><input id="continuebutton" type="button" value="CHECK" onClick="check()"></div>  
+            </div>
+          </div>
+          
+        </form>
+      </div> 
+    
+
+      <script>
+
+        var prefix = "images/leaves/"
+        var suffix = " leaf.jpg"
+
+        var weed1 = "Blackberry nightshade";
+        var lifeCycle1 = "Herbaceous annual or perennial";
+        var dispersal1 = "wildlife, cultivation";
+        var reproduce1 = "Seed";
+        var mControls1 = "Tillage, cover crops, planting density, farm hygiene";
+        var cControls1 = "systemic herbicide";
+        var description1 = " | rough stem";
+
+        var weed2 = "Blue billygoat weed";
+        var lifeCycle2 = "Herbaceous annual or biennial";
+        var dispersal2 = "wind, water, attach to passersby";
+        var reproduce2 = "Seed";
+        var mControls2 = "Tilling, hand weeding";
+        var cControls2 = "systemic herbicide";
+        var description2 = " | hairy stems and leaves";
+
+        var weed3 = "Broad-leafed pepper tree";
+        var lifeCycle3 = "Woody perennial";
+        var dispersal3 = "brids";
+        var reproduce3 = "seeds, suckers at cut stumps";
+        var mControls3 = "Cut down, stump removal";
+        var cControls3 = "Stem injection";
+        var description3 = "";
+
+        var weed4 = "Chinese celtis";
+        var lifeCycle4 = "Woody perennial";
+        var dispersal4 = "animals, water, garden waste";
+        var reproduce4 = "seeds, suckers";
+        var mControls4 = "Uproot saplings, cut and leave (starve), cut and treet (eliminate)";
+        var cControls4 = "Cut-treat";
+        var description4 = " | rough paper leaves";
+
+        var weed5 = "Cobbler's pegs";
+        var lifeCycle5 = "Herbaceous annual";
+        var dispersal5 = "Attchment, vehicles, water, produce";
+        var reproduce5 = "seed";
+        var mControls5 = "Hand pulling and mulching";
+        var cControls5 = "systemic herbicide";
+        var description5 = "";
+
+        var weed6 = "Creeping cinderella weed";
+        var lifeCycle6 = "Herbaceous annual or perennial";
+        var dispersal6 = "attaches to clothing, animals";
+        var reproduce6 = "seeds, soil, garden waste, water";
+        var mControls6 = "Hand pulling before flower/seed, treat vehicles and equipment";
+        var cControls6 = "systemic herbicide";
+        var description6 = " | warty textured leaf";
+
+        var weed7 = "Creeping oxalis";
+        var lifeCycle7 = "Herbaceous perennial";
+        var dispersal7 = "explosive";
+        var reproduce7 = "seeds, underground bulbs";
+        var mControls7 = "Hand pulling, mulching, improve soil health";
+        var cControls7 = "systemic herbicide";
+        var description7 = "";
+
+        var weed8 = "Emilia";
+        var lifeCycle8 = "Herbaceous annual";
+        var dispersal8 = "wind, machinery, water, animals";
+        var reproduce8 = "seeds";
+        var mControls8 = "Tilling, hand weeding, keeping area mowed";
+        var cControls8 = "systemic herbicide";
+        var description8 = "";
+
+        var weed9 = "Flickweed";
+        var lifeCycle9 = "Herbaceous annual";
+        var dispersal9 = "explosion";
+        var reproduce9 = "seeds";
+        var mControls9 = "Hand weeding and mulching, mowing in early spring";
+        var cControls9 = "systemic herbicide";
+        var description9 = "";
+
+        var weed10 = "Glycine";
+        var lifeCycle10 = "Woody perennial";
+        var dispersal10 = "contaminated fodder, garden waste";
+        var reproduce10 = "seeds, detached woody stems take root";
+        var mControls10 = "Brush cutter";
+        var cControls10 = "Splatter gun";
+        var description10 = "";
+
+        var weed11 = "Ground Asparagus";
+        var lifeCycle11 = "Woody perennial";
+        var dispersal11 = "Birds";
+        var reproduce11 = "seeds, From the crown, garden waste";
+        var mControls11 = "Crowning";
+        var cControls11 = "Cut stump";
+        var description11 = " | fine leaves";
+
+        var weed12 = "Mother of millions";
+        var lifeCycle12 = "Woody perennial";
+        var dispersal12 = "drop off";
+        var reproduce12 = "seeds, Grows from plantlets";
+        var mControls12 = "Fire";
+        var cControls12 = "systemic herbicide";
+        var description12 = " | smooth, fleshy, succulent leaves";
+
+        var weed13 = "Nut grass";
+        var lifeCycle13 = "Herbaceous perennial";
+        var dispersal13 = "N/A";
+        var reproduce13 = "Creeping underground stems";
+        var mControls13 = "Hand pulling";
+        var cControls13 = "selective systemic herbicide";
+        var description13 = "";
+
+        var weed14 = "Ochna";
+        var lifeCycle14 = "Woody perennial";
+        var dispersal14 = "Birds and animals, garden waste";
+        var reproduce14 = "seeds";
+        var mControls14 = "Remove roots carefully";
+        var cControls14 = "Basal bark treatment";
+        var description14 = " | pimple-textured bark";
+
+        var weed15 = "Queensland umbrella tree";
+        var lifeCycle15 = "Woody perennial";
+        var dispersal15 = "Birds and animals";
+        var reproduce15 = "seeds";
+        var mControls15 = "Stump removal";
+        var cControls15 = "Stem injection";
+        var description15 = "";
+
+        
+
+        let number = Math.floor(Math.random() * 15) + 1;
+        let weed = eval("weed" + number);
+        let lifeCycle = eval("lifeCycle" + number);
+        let dispersal = eval("dispersal" + number);
+        let reproduce = eval("reproduce" + number);
+        let mControls = eval("mControls" + number);
+        let cControls = eval("cControls" + number);
+        let description = eval("description" + number);
+        let questionimage = prefix + weed + suffix;
+          
+
+        function myFunction() {
+          document.getElementById("weed").innerHTML = weed;
+          document.getElementById("lifeCycle").innerHTML = lifeCycle;
+          document.getElementById("dispersal").innerHTML = dispersal;
+          document.getElementById("reproduce").innerHTML = reproduce;
+          document.getElementById("mControls").innerHTML = mControls;
+          document.getElementById("cControls").innerHTML = cControls;
+          document.getElementById("description").innerHTML = description;
+          document.getElementById('weedimage').src = questionimage;
+          var div = document.getElementsByClassName('answer');
+            div[0].style.display = "none";
+            div[1].style.display = "none";
+            div[2].style.display = "none";
+            div[3].style.display = "none";
+            div[4].style.display = "none";
+            div[5].style.display = "none";
+
+        }
+
+        
+        function check() {
+          output1 = document.getElementById('output1').value;
+          document.querySelector('input[name="output1"]').disabled = true;
+          document.querySelector('input[name="output2"]').disabled = true;
+          document.querySelector('input[name="output3"]').disabled = true;
+          document.querySelector('input[name="output4"]').disabled = true;
+          document.querySelector('input[name="output5"]').disabled = true;
+          document.querySelector('input[name="output6"]').disabled = true;
+          document.getElementById('continuebutton').value = 'CONTINUE';
+          document.getElementById('continuebutton').style.color = 'white';
+          document.getElementById('continuebutton').style.backgroundColor = '#85a1e4';
+          document.getElementById('continuebutton').focus();
+          document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
+          document.getElementById('bottombar').style.backgroundColor = '#c2d1f4';
+          document.getElementById('bottombar').style.borderTop = "0px";
+          
+        
+
+          var div = document.getElementsByClassName('answer');
+          div[0].style.display = "block";
+          div[1].style.display = "block";
+          div[2].style.display = "block";
+          div[3].style.display = "block";
+          div[4].style.display = "block";
+          div[5].style.display = "block";
+        }
+        
+      </script>
+
+    </main>
+    <footer>
+      <!--Put your footer in here! -->
+    </footer>
+  </body>
+</html>
