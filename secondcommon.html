@@ -70,16 +70,16 @@
         var word8 = "Brunfelsia latifolia";
         var word9 = "Abutilon pictum";
         var word10 = "Brachyscome 'Mauve delight'";
-        var common1 = "Golden cane palm";
-        var common2 = "Lady palm";
-        var common3 = "Bamboo palm";
-        var common4 = "Kangaroo paw";
-        var common5 = "Sweet pea";
-        var common6 = "Princess flower";
-        var common7 = "Iceberg rose";
-        var common8 = "Yesterday, today, tomorrow";
-        var common9 = "Chinese lantern";
-        var common10 = "Native daisy";  
+        var common1 = "golden cane palm";
+        var common2 = "lady palm";
+        var common3 = "bamboo palm";
+        var common4 = "kangaroo paw";
+        var common5 = "sweet pea";
+        var common6 = "princess flower";
+        var common7 = "iceberg rose";
+        var common8 = "yesterday, today, tomorrow";
+        var common9 = "chinese lantern";
+        var common10 = "native daisy";  
 
         let number = Math.floor(Math.random() * 10) + 1;
         let latin = eval("word" + number);
@@ -93,7 +93,8 @@
 
         
         function check() {
-          output1 = document.getElementById('output1').value
+          tempoutput = document.getElementById('output1').value
+          output1 = tempoutput.toLowerCase()
           if (output1 == common) {
             document.getElementById("result").style.color = '#418850';
             document.getElementById("resultheader").style.color = '#418850';
