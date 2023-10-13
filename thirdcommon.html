@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Common III</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="Education perfect but bootleg" />
+    <meta name="author" content="Sage Mavka" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="images/icon.webp">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body onload="myFunction()">
+    <!--This is a comment-->
+    <header>
+      <nav>
+        <!--Make your navigation in here!-->
+      </nav>
+    </header>
+    <main>
+      
+      <div class="titlebar">
+        <button><a id="homebutton" href="index.html">BACK</a></button>
+
+        <h1 id="titletext">Common III</h1>
+      </div>
+
+      <div class="center">
+
+        
+        <form">
+          <p id="outputheader" for="output1">What is the common name for: </p>
+          <p><span id="latin"></span></p>
+          <input type="text" id="output1" name="output1" autofocus>
+      
+        </div>
+
+        <div id="bottombar" class="bottombar">
+
+          <div class="grid-container">
+            <div class="item1"><img id="resultimage" src="images/blank.png" srcwidth="84px" height="84px"></div>
+
+            <div class="item2"><p id="resultheader">Correct solution: <br></p>
+              <p id="result"><span id="common"></span></p></div>
+
+            <div class="item3"><input id="continuebutton" type="button" value="CHECK" onClick="check()"></div>  
+          </div>
+
+        </div>
+          
+        </div>
+      </form>
+
+      
+
+      
+
+      <script>
+
+        var word1 = "Acacia pycnantha";
+        var word2 = "Vappodes phalaenopsis";
+        var word3 = "Ginkgo biloba";
+        var word4 = "Lomandra hystrix";
+        var word5 = "Lobularia maritima";
+        var word6 = "Cyathea cooperi";
+        var word7 = "Hippeastrum reginae";
+        var word8 = "Nerium oleander";
+        var word9 = "Acalypha hispida";
+        var word10 = "Plumbago auriculata";
+        var common1 = "golden wattle";
+        var common2 = "cooktown orchid";
+        var common3 = "ginkgo";
+        var common4 = "green mat-rush";
+        var common5 = "sweet alyssum";
+        var common6 = "lacy tree fern";
+        var common7 = "mexican lily";
+        var common8 = "nerium";
+        var common9 = "chenille Plant";
+        var common10 = "cape Leadwort";
+
+        let number = Math.floor(Math.random() * 10) + 1;
+        let latin = eval("word" + number);
+        let common = eval("common" + number);
+          
+
+        function myFunction() {
+          document.getElementById("common").innerHTML = common;
+          document.getElementById("latin").innerHTML = latin;
+        }
+
+        
+        function check() {
+          output1 = document.getElementById('output1').value
+          if (output1 == common) {
+            document.getElementById("result").style.color = '#418850';
+            document.getElementById("resultheader").style.color = '#418850';
+            document.getElementById('bottombar').style.backgroundColor = '#edfff1';
+            document.getElementById('resultimage').src = 'images/tick.png';
+            var div = document.getElementById('resultimage');
+            div.style.opacity = "1";
+            document.querySelector('input[name="output1"]').disabled = true;
+            document.getElementById('continuebutton').style.color = 'white';
+            document.getElementById('continuebutton').style.backgroundColor = '#418850';
+            document.getElementById('continuebutton').value = 'CONTINUE';
+            document.getElementById('continuebutton').focus();
+            document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
+            document.getElementById('bottombar').style.borderTop = "0px";
+          }
+          else {
+            document.getElementById("result").style.color = '#b93434';
+            document.getElementById("resultheader").style.color = '#b93434';
+            document.getElementById('resultimage').src = 'images/cross.png';
+            var div = document.getElementById('resultimage');
+            div.style.opacity = "1";
+            document.querySelector('input[name="output1"]').disabled = true;
+            document.getElementById('continuebutton').value = 'CONTINUE';
+            document.getElementById('continuebutton').style.color = 'white';
+            document.getElementById('continuebutton').style.backgroundColor = '#b93434';
+            document.getElementById('continuebutton').focus();
+            document.getElementById('continuebutton').setAttribute( "onClick", "location.reload();");
+            document.getElementById('bottombar').style.backgroundColor = '#fcd4d4';
+            document.getElementById('bottombar').style.borderTop = "0px";
+          }
+        }
+
+
+        var thing = document.getElementById("output1");
+        thing.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById("continuebutton").click();
+          }
+        });
+        
+      </script>
+
+    </main>
+    <footer>
+      <!--Put your footer in here! -->
+    </footer>
+  </body>
+</html>
