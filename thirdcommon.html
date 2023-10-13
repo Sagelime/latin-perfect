@@ -78,8 +78,8 @@
         var common6 = "lacy tree fern";
         var common7 = "mexican lily";
         var common8 = "nerium";
-        var common9 = "chenille Plant";
-        var common10 = "cape Leadwort";
+        var common9 = "chenille plant";
+        var common10 = "cape leadwort";
 
         let number = Math.floor(Math.random() * 10) + 1;
         let latin = eval("word" + number);
@@ -93,7 +93,8 @@
 
         
         function check() {
-          output1 = document.getElementById('output1').value
+          tempoutput1 = document.getElementById('output1').value
+          output1 = tempoutput1.toLowerCase();
           if (output1 == common) {
             document.getElementById("result").style.color = '#418850';
             document.getElementById("resultheader").style.color = '#418850';
